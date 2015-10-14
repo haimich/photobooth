@@ -3,21 +3,49 @@
   <head>
     <meta charset="utf-8">
     <title>Photobooth!!</title>
-      
-    <link rel="stylesheet" href="style.css" />
   </head>
   
 <body>
-
-  <!-- <img src="bg.jpg" style="width: 100%; height: 100%;"> -->
   
   <div id="container">
     <video autoplay="true" id="videoElement"></video>
   </div>
 
-  <img id="imgElement" src="">
-  <canvas id="canvasElement" style="display:none;"></canvas>
+  <div>
+    <img src="slidecolor.png">
 
+    <label> Hue Key &ndash; <small>the base color hue to remove</small>
+      <input type="range" name="hue" min="0" max="360" value="120">
+    </label> <br>
+
+    <label> Delta 1 &ndash; <small>hue distance limity for total transparency</small>
+      <input type="range" name="delta1" min="0" max="360" value="30">
+    </label> <br>
+
+    <label> Delta 2 &ndash; <small>hue distance to start total opacity</small>
+      <input type="range" name="delta2" min="0" max="360" value="60">
+    </label> <br>
+
+    <label> Delta 3 &ndash; <small>hue distance limit for hue correction</small>
+      <input type="range" name="delta3" min="0" max="360" value="70">
+    </label> <br>
+
+    <label> Max Light &ndash; <small>max HS<b>L</b> value to remove a pixel</small>
+      <input type="range" name="maxlight" min="0" max="100" value="80">
+    </label> <br>
+
+    <label> Min Light &ndash; <small>min HS<b>L</b> value to remove a pixel</small>
+      <input type="range" name="minlight" min="0" max="100" value="20">
+    </label> <br>
+
+    <label> Min Saturation &ndash; <small>min H<b>S</b>L value to remove a pixel</small>
+      <input type="range" name="minSaturation" min="0" max="100" value="20">
+    </label> <br>
+  </div>
+
+  <canvas id="canvasElement"></canvas>
+
+  <script src="removeBackground.js"></script>
   <script src="getVideo.js"></script>
 
 </body>

@@ -3,16 +3,17 @@ A JavaScript photobooth application where you can pick an own background image.
 
 ## Libraries
 
-### ChromaKey.js
-* https://gitlab.com/multimedia/chromakey-js
-* removes green from static images in a canvas
+https://gitlab.com/multimedia/chromakey-js
+=> removes green from static images in a canvas
 
-### Chroma direkt auf Video
-* http://codepen.io/teetteet/pen/tKqEs
+http://codepen.io/teetteet/pen/tKqEs
+=> Chroma direkt auf Video
+
+https://github.com/felipenmoura/js-chroma-key
+=> canvas + video
 
 ### to be tested
 
-https://github.com/felipenmoura/js-chroma-key
 https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Manipulating_video_using_canvas
 http://photobooth.orange-coding.net/
 

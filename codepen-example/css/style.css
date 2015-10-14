@@ -1,0 +1,27 @@
+body {
+  margin-top:2%;
+  text-align:center;
+  color:#fff;
+  background-color:#122836;
+}
+video { 
+  position:absolute;
+  visibility:hidden;
+}
+canvas {
+  border:8px solid #fff;
+  background: url(http://img1.geekapuntes.com/wp-content/uploads/2014/07/12305_12567_Yosemite_Valley_md.jpg);
+  background-size: cover;
+}
+button {
+  border:none;
+  display:block;
+  padding:0.5em 1em;
+  margin:1% auto 0;
+  cursor:pointer;
+  color:#fff;
+  background-color:#9f361b;
+}
+button:active {
+  background-color:#e44d26;
+}

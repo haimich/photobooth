@@ -32,8 +32,17 @@ app.get('/search', function (req, res) {
 /* Image Upload */
 app.post('/upload', function(req, res) {
   imageAsBase64 = req.body.image;
+  var rawImage = imageAsBase64.replace(/^data:image\/jpeg;base64,/, '');
+
+  var filename = 'photos/photo_' + new Date().getTime() + '.jpg';
   
-  upload('photos/maxresdefault.jpg', function(uploadedFileName) {
+  require('fs').writeFile(filename, rawImage, 'base64', function(err) {
+    if (err !== null && err !== '') {
+      throw new Error('Writing file with name ' + filename + ' failed!');
+    }
+  });
+  
+  upload(filename, function(uploadedFileName) {
     share(uploadedFileName);
   });
 

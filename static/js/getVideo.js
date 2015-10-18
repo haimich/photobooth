@@ -82,7 +82,7 @@
     }
 
     function snapshot() {
-      var snapshot = chromaCanvas.toDataURL();
+      var snapshot = chromaCanvas.toDataURL('image/jpeg', 1.0);
 
       vex.open({
         message: null,

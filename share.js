@@ -9,8 +9,6 @@ module.exports = function(imageLink) {
 
   var post_data = '{"body": "### Photobooth has striked again!\n\n![photobooth](' + imageLink + ')", "wall_id": ' + config.one.shoutout_wall + '}';
 
-  console.log(post_data);
-
   var options = {
     host: config.one.host,
     port: 443,

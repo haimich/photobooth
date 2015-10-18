@@ -15,3 +15,6 @@ one:
   user:
   pw: 
 ```
+
+## Flickr API
+* https://www.flickr.com/services/api/misc.urls.html

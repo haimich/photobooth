@@ -58,21 +58,21 @@
 
       var offsetY = (bgImg.naturalWidth / 4 * 3 - bgImg.naturalHeight) / 2;
 
-      //chromaCtx.clearRect(0, 0, chromaCanvas.width, chromaCanvas.height);
+      chromaCtx.clearRect(0, 0, chromaCanvas.width, chromaCanvas.height);
       chromaCtx.drawImage(bgImg, 0, 0, bgImg.naturalWidth,    bgImg.naturalHeight,
                          0, 0, chromaCanvas.width, chromaCanvas.height);
 
       fillChromaCanvas();
       setTimeout(function () {
         timerCallback();
-      }, 1000);
+      }, 10);
     }
 
     function uploadImage(imageAsBase64) {
       var url = '/upload';
 
       $.ajax({
-        type: "POST",
+        type: 'POST',
         url: url,
         data: { image: imageAsBase64 },
         success: function() { alert('Success!'); },

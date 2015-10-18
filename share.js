@@ -27,8 +27,6 @@ module.exports = function(imageLink) {
 
     if (res.statusCode !== 201) {
       throw new Error('ONE request failed with status code ' + res.statusCode);
-    } else {
-      console.log('Shared successfully');
     }
 
     res.on('end', function() {

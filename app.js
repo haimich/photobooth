@@ -1,9 +1,10 @@
-var search  = require('./search');
-var share   = require('./share');
-var upload  = require('./upload');
-var config  = require('./config');
-var express = require('express');
+var search     = require('./search');
+var share      = require('./share');
+var upload     = require('./upload');
+var config     = require('./config');
+var express    = require('express');
 var bodyParser = require('body-parser');
+// var proxy      = require('express-http-proxy');
 
 var app = express();
 
@@ -48,5 +49,37 @@ app.post('/upload', function(req, res) {
 
   res.json({ success: true });
 });
+
+/* Proxy for Flickr image GET requests (workaround for security issue with Canvas) */
+app.get('/proxy', function (req, res) {
+  var target = req.query.target || '';
+
+  if (target === '') {
+    res.end('Error: no target given');
+  } else {
+    require('https').get(target, function(response) {
+      if (response.statusCode !== 200) {
+        throw new Error('Search request failed with status code ' + response.statusCode);
+      }
+
+      response.on('data', function(data) {
+        res.write(data);
+      });
+
+      response.on('end', function() {
+        res.end();
+      });
+    });
+  }
+});
+
+// app.use('/proxy', proxy('www.google.com', {
+//   filter: function(req, res) {
+//     return req.method == 'GET';
+//   },
+//   forwardPath: function(req, res) {
+//     return require('url').parse(req.url).path;
+//   }
+// }));
 
 app.listen(3000);

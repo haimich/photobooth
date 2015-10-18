@@ -55,9 +55,10 @@
   }
 
   function createImage(photo) {
-    var photoUrl = "https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + "_q.jpg";
-      var imageElement = document.createElement('img');
-      imageElement.src = photoUrl;
-      return imageElement;
+    var photoUrl = 'https://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_q.jpg';
+    var proxyUrl = '/proxy?target=' + encodeURI(photoUrl);
+    var imageElement = document.createElement('img');
+    imageElement.src = proxyUrl;
+    return imageElement;
   }
 })();

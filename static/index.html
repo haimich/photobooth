@@ -12,30 +12,38 @@
 
   <div id="container">
     <main>
-      <canvas id="chromaCanvas" width="400" height="300"></canvas>
+      <canvas id="chromaCanvas"></canvas>
     </main>
 
     <aside id="chromaSliders">
-      <label> Hue Key &ndash; <small>the base color hue to remove</small></label>
+      <h3>1. Choose Background</h2>
+      <button id="changeBgButton">Click</button>
+
+      <h3>2. Tweak Greenscreen settings</h2>
+
+      <label>Hue Key &ndash; <small>the base color hue to remove</small></label>
       <input id="colorSlider" type="range" name="hue" min="0" max="360" value="120">
 
-      <label> Delta 1 &ndash; <small>hue distance limity for total transparency</small></label>
+      <label>Delta 1 &ndash; <small>hue distance limity for total transparency</small></label>
       <input type="range" name="delta1" min="0" max="360" value="30">    
 
-      <label> Delta 2 &ndash; <small>hue distance to start total opacity</small></label>
+      <label>Delta 2 &ndash; <small>hue distance to start total opacity</small></label>
       <input type="range" name="delta2" min="0" max="360" value="60">
       
-      <label> Delta 3 &ndash; <small>hue distance limit for hue correction</small></label>
+      <label>Delta 3 &ndash; <small>hue distance limit for hue correction</small></label>
       <input type="range" name="delta3" min="0" max="360" value="70">
 
-      <label> Max Light &ndash; <small>max HSL value to remove a pixel</small></label>
+      <label>Max Light &ndash; <small>max HSL value to remove a pixel</small></label>
       <input type="range" name="maxlight" min="0" max="100" value="80">
 
-      <label> Min Light &ndash; <small>min HSL value to remove a pixel</small></label>
+      <label>Min Light &ndash; <small>min HSL value to remove a pixel</small></label>
       <input type="range" name="minlight" min="0" max="100" value="20">
 
-      <label> Min Saturation &ndash; <small>min HSL value to remove a pixel</small></label>
+      <label>Min Saturation &ndash; <small>min HSL value to remove a pixel</small></label>
       <input type="range" name="minSaturation" min="0" max="100" value="20">
+
+      <h3>3. Take Snapshot</h2>
+      <button id="takeSnapshotButton">Click</button>
     </aside>
   </div>
 

@@ -47,17 +47,39 @@ aside {
   background-image: url("/images/slidecolor.png");
 }
 
-aside button {
-  display: block;
-  margin-bottom: 10px;
-  padding: 20px;
-  font-size: 20px;
-  background-color: lightblue;
-}
-
 #bg-img {
   width: 288px;
   border: 2px solid lightblue;
   cursor: pointer;
 }
+
+#shootBtn {
+  width: 288px;
+  cursor: pointer; 
+}
+
+#search-box {
+  margin-top: 20px;
+  border: 1px solid #aaa;
+  padding: 10px;
+  font-size: 16px;
+   border-radius: 10px 0 0 10px;
+  -moz-border-radius: 10px 0 0 10px;
+  -webkit-border-radius: 10px 0 0 10px;
+  -o-border-radius: 10px 0 0 10px;
+  width: 252px;
+}
+
+#search-btn {
+  background: #0099ff;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 0 10px 10px 0;
+  -moz-border-radius: 0 10px 10px 0;
+  -webkit-border-radius: 0 10px 10px 0;
+  -o-border-radius: 0 10px 10px 0;
+  border: 0 none;
+  font-weight: bold;
+  cursor: pointer;
 }

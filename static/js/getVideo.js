@@ -68,16 +68,34 @@
       }, 1000);
     }
 
+    function uploadImage(imageAsBase64) {
+      var url = '/upload';
+
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: { image: imageAsBase64 },
+        success: function() { console.log('success'); },
+        dataType: 'json'
+      });
+    }
+
     function snapshot() {
+      var snapshot = chromaCanvas.toDataURL();
+
       vex.open({
         message: null,
         showCloseButton: true,
         buttons: [],
-        content: '<img src="' + chromaCanvas.toDataURL() + '"><div class="vex-dialog-buttons"><input class="vex-dialog-button-primary vex-dialog-button vex-first vex-last" value="Post in ONE!" type="submit"></div>'
+        content: '<img src="' + snapshot + '"><div class="vex-dialog-buttons"><input id="shareInONE" class="vex-dialog-button-primary vex-dialog-button vex-first vex-last" value="Post in ONE!" type="submit"></div>'
       });
 
       //Set dialog width
       $('.vex.vex-theme-flat-attack .vex-content').css('width', '751px');
+
+      document.querySelector('#shareInONE').addEventListener('click', function() {
+        uploadImage(snapshot);
+      });
     }
 
     shootBtn.addEventListener('click', snapshot);

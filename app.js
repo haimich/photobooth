@@ -1,9 +1,14 @@
 var search  = require('./search');
 var config  = require('./config');
 var express = require('express');
+var bodyParser = require('body-parser');
 
 var app = express();
 app.use(express.static('static'));
+
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 /* Flickr Search */
 app.get('/search', function (req, res) {
@@ -21,6 +26,12 @@ app.get('/search', function (req, res) {
       res.end(error);
     }
   }
+});
+
+/* Image Upload */
+app.post('/upload', function(req, res) {
+  imageAsBase64 = req.body.image;
+  res.end();
 });
  
 app.listen(3000);

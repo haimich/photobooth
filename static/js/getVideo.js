@@ -75,7 +75,8 @@
         type: "POST",
         url: url,
         data: { image: imageAsBase64 },
-        success: function() { console.log('success'); },
+        success: function() { alert('Success!'); },
+        error: function(reason) { console.log('An error occured', reason); },
         dataType: 'json'
       });
     }

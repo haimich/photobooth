@@ -31,7 +31,7 @@ app.get('/search', function (req, res) {
 /* Image Upload */
 app.post('/upload', function(req, res) {
   imageAsBase64 = req.body.image;
-  res.end();
+  res.json({ success: true });
 });
  
 app.listen(3000);

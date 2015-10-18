@@ -3,11 +3,13 @@ var https = require('https');
 
 var config = config.readConfig();
 
-module.exports = function(imageLink, dataReceived, end) {
+module.exports = function(imageLink) {
   var user = config.one.user;
   var pw = config.one.pw;
 
-  var post_data = '{"body": "Photobooth has striked again!\n\n![photobooth](' + imageLink + ')", "wall_id": ' + config.one.shoutout_wall + '}';
+  var post_data = '{"body": "### Photobooth has striked again!\n\n![photobooth](' + imageLink + ')", "wall_id": ' + config.one.shoutout_wall + '}';
+
+  console.log(post_data);
 
   var options = {
     host: config.one.host,
@@ -28,7 +30,7 @@ module.exports = function(imageLink, dataReceived, end) {
     if (res.statusCode !== 201) {
       throw new Error('ONE request failed with status code ' + res.statusCode);
     } else {
-      console.log('success');
+      console.log('Shared successfully');
     }
 
     res.on('end', function() {

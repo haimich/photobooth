@@ -33,17 +33,11 @@ app.get('/search', function (req, res) {
 app.post('/upload', function(req, res) {
   imageAsBase64 = req.body.image;
   
-  upload(imageAsBase64, function(data) {
-    //...
+  upload('photos/maxresdefault.jpg', function(uploadedFileName) {
+    share(uploadedFileName);
   });
 
   res.json({ success: true });
-});
-
-app.get('/share', function(req, res) {
-  share('http://www.keenthemes.com/preview/metronic/theme/assets/global/plugins/jcrop/demos/demo_files/image1.jpg', function(data) {
-    //...
-  });
 });
 
 app.listen(3000);

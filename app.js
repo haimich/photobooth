@@ -5,6 +5,7 @@ var express = require('express');
 var app = express();
 app.use(express.static('static'));
 
+/* Flickr Search */
 app.get('/search', function (req, res) {
   var term = req.query.term || '';
 
@@ -13,9 +14,7 @@ app.get('/search', function (req, res) {
   } else {
     try {
       var dataReceived = function (data) { res.write(data); };
-      var end          = function() { 
-        res.end();
-      };
+      var end = function() { res.end(); };
 
       search(term, dataReceived, end);
     } catch (error) {

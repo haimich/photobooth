@@ -60,10 +60,10 @@ aside {
 
 .vex.vex-theme-flat-attack .vex-content {
   width: 856px;
+  top: -38px;
 }
 
 #search-box {
-  margin-top: 20px;
   border: 1px solid #aaa;
   padding: 10px;
   font-size: 16px;
@@ -91,4 +91,8 @@ aside {
 #imageResults {
   margin-top: 35px;
   width: 755px;
+}
+
+#imageResults img {
+  cursor: pointer;
 }

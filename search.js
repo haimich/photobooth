@@ -4,7 +4,7 @@ var https = require('https');
 var config = config.readConfig();
 
 module.exports = function(term, dataReceived, end) {
-  var url = config.flickr.url + "?method=flickr.photos.search&api_key=" + config.flickr.api_key + "&text=" + term + "&format=json&nojsoncallback=1&perpage=10";
+  var url = config.flickr.url + "?method=flickr.photos.search&api_key=" + config.flickr.api_key + "&text=" + term + "&format=json&nojsoncallback=1&per_page=20";
 
   var req = https.get(url, function(res) {
     if (res.statusCode !== 200) {

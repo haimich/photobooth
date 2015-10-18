@@ -54,3 +54,10 @@ aside button {
   font-size: 20px;
   background-color: lightblue;
 }
+
+#bg-img {
+  width: 288px;
+  border: 2px solid lightblue;
+  cursor: pointer;
+}
+}

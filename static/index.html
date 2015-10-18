@@ -4,7 +4,10 @@
     <meta charset="utf-8">
     <title>Photobooth</title>
 
+    <link rel="stylesheet" href="vendor/vex/vex.css" />
+    <link rel="stylesheet" href="vendor/vex/vex-theme-flat-attack.css" />
     <link href="css/style.css" type="text/css" rel="stylesheet">
+
   </head>  
 <body>
   
@@ -17,7 +20,8 @@
 
     <aside id="chromaSliders">
       <h3>1. Choose Background</h2>
-      <button id="changeBgButton">Click</button>
+  
+      <img id="bg-img" src="images/bg.jpg">
 
       <h3>2. Tweak Greenscreen settings</h2>
 
@@ -47,9 +51,11 @@
     </aside>
   </div>
 
-  <img id="bg-img" src="images/bg.jpg" style="display: none;">
-
   <img id="snapshot">
+
+  <script src="vendor/jquery/jquery-1.11.3.min.js"></script>
+  <script src="vendor/vex/vex.combined.min.js"></script>
+  <script src="js/dialog.js"></script>
 
   <script src="js/removeBackground.js"></script>
   <script src="js/getVideo.js"></script>

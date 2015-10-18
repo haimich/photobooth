@@ -58,6 +58,10 @@ aside {
   cursor: pointer; 
 }
 
+.vex.vex-theme-flat-attack .vex-content {
+  width: 856px;
+}
+
 #search-box {
   margin-top: 20px;
   border: 1px solid #aaa;
@@ -67,7 +71,7 @@ aside {
   -moz-border-radius: 10px 0 0 10px;
   -webkit-border-radius: 10px 0 0 10px;
   -o-border-radius: 10px 0 0 10px;
-  width: 252px;
+  width: 310px;
 }
 
 #search-btn {
@@ -85,5 +89,6 @@ aside {
 }
 
 #imageResults {
-  margin-top: 15px;
+  margin-top: 35px;
+  width: 755px;
 }

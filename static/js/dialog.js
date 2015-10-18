@@ -22,17 +22,14 @@
 
           fetchPhotos(term);
 
-          // fetchPhotos(term)
-          //   .then(function (res) { debugger; return res.json(); })
-          //   .then(function (res) { debugger; return res.photos.photo; })
-          //   .then(function (photos) {
-          //     debugger;
-          //     var tmpElement = document.createDocumentFragment();
-          //     photos.map(createImage).forEach(tmpElement.appendChild, tmpElement);
+          fetchPhotos(term)
+            .then(function (photos) {
+              var tmpElement = document.createDocumentFragment();
+              photos.map(createImage).forEach(tmpElement.appendChild, tmpElement);
 
-          //     imageResults.innerHTML = '';
-          //     imageResults.appendChild(tmpElement);
-          //   });
+              imageResults.innerHTML = '';
+              imageResults.appendChild(tmpElement);
+            });
         })
       }
     });
@@ -41,13 +38,9 @@
   function fetchPhotos(term) {
     var url = "/search?term=" + term;
 
-    $.get(url, function(data) {
-      debugger;
-    });
-
-    // return fetch(url);
-        // .then(function (res) { return res.json(); })
-        // .then(function (res) { return res.photos.photo; });
+    return fetch(url)
+        .then(function (res) { return res.json(); })
+        .then(function (res) { return res.photos.photo; });
   }
 
   function createImage(photo) {

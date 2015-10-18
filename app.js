@@ -14,7 +14,7 @@ function readConfig() {
 
 var config = readConfig();
 
-var app     = express();
+var app = express();
 app.use(express.static('static'));
 
 app.get('/search', function (req, res) {

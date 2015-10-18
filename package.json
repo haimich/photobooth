@@ -1,0 +1,19 @@
+{
+  "name": "chroma-photobooth",
+  "version": "0.0.1",
+  "description": "A JavaScript photobooth application where you can pick an own background image.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haimich/photobooth.git"
+  },
+  "author": "Michael Müller",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/haimich/photobooth/issues"
+  },
+  "homepage": "https://github.com/haimich/photobooth#readme"
+}

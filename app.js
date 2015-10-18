@@ -46,7 +46,7 @@ app.post('/upload', function(req, res) {
     share(uploadedFileName);
   });
 
-  res.json({ success: true });
+  res.json({ success: true }); //jquery wants a response, so it can have it!
 });
 
 /* Proxy for Flickr image GET requests (workaround for security issue with Canvas) */

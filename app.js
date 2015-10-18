@@ -4,7 +4,6 @@ var upload     = require('./upload');
 var config     = require('./config');
 var express    = require('express');
 var bodyParser = require('body-parser');
-// var proxy      = require('express-http-proxy');
 
 var app = express();
 
@@ -72,14 +71,5 @@ app.get('/proxy', function (req, res) {
     });
   }
 });
-
-// app.use('/proxy', proxy('www.google.com', {
-//   filter: function(req, res) {
-//     return req.method == 'GET';
-//   },
-//   forwardPath: function(req, res) {
-//     return require('url').parse(req.url).path;
-//   }
-// }));
 
 app.listen(3000);

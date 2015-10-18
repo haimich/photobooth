@@ -39,12 +39,8 @@ aside {
 }
 
 #chromaSliders input[type=range] {
-  width: 256px;
+  width: 250px;
   margin-bottom: 8px;
-}
-
-#colorSlider {
-  background-image: url("/images/slidecolor.png");
 }
 
 #bg-img {

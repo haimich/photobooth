@@ -1,6 +1,5 @@
 var config = require('./config');
 var https = require('https');
-var querystring = require('querystring');
 
 var config = config.readConfig();
 
@@ -13,7 +12,7 @@ module.exports = function(imageLink, dataReceived, end) {
   var options = {
     host: config.one.host,
     port: 443,
-    path: config.one.api_path,
+    path: config.one.api_path_share,
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -25,7 +24,6 @@ module.exports = function(imageLink, dataReceived, end) {
 
   var req = https.request(options, function(res) {
     res.setEncoding('utf8');
-    console.log(res);
 
     if (res.statusCode !== 201) {
       throw new Error('ONE request failed with status code ' + res.statusCode);

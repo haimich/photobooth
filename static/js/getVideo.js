@@ -41,7 +41,7 @@
 
     function fillChromaCanvas() {
       if (localMediaStream) {
-        mergeCtx.drawImage(video, 0, 0, video.clientWidth,    video.clientHeight,
+        mergeCtx.drawImage(video, 0, 0, 640, 480, //video.clientWidth,    video.clientHeight,
                    0, 0, chromaCanvas.width, chromaCanvas.height);
         
         var chromaKeyer = new window.ChromaKey2Alpha(buildConfig());
@@ -58,9 +58,9 @@
 
       var offsetY = (bgImg.naturalWidth / 4 * 3 - bgImg.naturalHeight) / 2;
 
-//chromaCtx.clearRect(0, 0, chromaCanvas.width, chromaCanvas.height);
-chromaCtx.drawImage(bgImg, 0, 0, bgImg.naturalWidth,    bgImg.naturalHeight,
-                   0, 0, chromaCanvas.width, chromaCanvas.height);
+      //chromaCtx.clearRect(0, 0, chromaCanvas.width, chromaCanvas.height);
+      chromaCtx.drawImage(bgImg, 0, 0, bgImg.naturalWidth,    bgImg.naturalHeight,
+                         0, 0, chromaCanvas.width, chromaCanvas.height);
 
       fillChromaCanvas();
       setTimeout(function () {
@@ -78,15 +78,9 @@ chromaCtx.drawImage(bgImg, 0, 0, bgImg.naturalWidth,    bgImg.naturalHeight,
       });
     }
 
-loadImage('https://farm1.staticflickr.com/592/22266513761_3d92f74958_h.jpg').then(function (img) { bgImg = img; console.log(img); });
+    loadImage('https://farm1.staticflickr.com/592/22266513761_3d92f74958_h.jpg').then(function (img) { bgImg = img; console.log(img); });
 
     function snapshot() {
-      //1. Add background image
-      //mergeCtx.drawImage(bgImg, 0, 0, bgImg.naturalWidth, bgImg.naturalHeight);
-
-      //2. Add current video image with chroma key applied
-      //mergeCtx.drawImage(chromaCanvas, 0, 0);
-
       snapshotElement.src = chromaCanvas.toDataURL();
     }
 
@@ -106,8 +100,8 @@ loadImage('https://farm1.staticflickr.com/592/22266513761_3d92f74958_h.jpg').the
       console.log('An error occured: ', e);
     }
      
-    if (navigator.getUserMedia) {       
-      navigator.getUserMedia({video: true}, handleVideo, videoError);
-    }
+    // if (navigator.getUserMedia) {       
+    //   navigator.getUserMedia({video: true}, handleVideo, videoError);
+    // }
   };
 }());

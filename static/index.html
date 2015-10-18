@@ -3,49 +3,43 @@
   <head>
     <meta charset="utf-8">
     <title>Photobooth</title>
-  </head>
-  
+
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+  </head>  
 <body>
   
+  <video id="videoElement" autoplay="true" style="display: none;"></video>
+
   <div id="container">
-    <video autoplay="true" id="videoElement"></video>
-  </div>
+    <main>
+      <canvas id="chromaCanvas" width="400" height="300"></canvas>
+    </main>
 
-  <div>
-    <img src="images/slidecolor.png">
+    <aside id="chromaSliders">
+      <label> Hue Key &ndash; <small>the base color hue to remove</small></label>
+      <input id="colorSlider" type="range" name="hue" min="0" max="360" value="120">
 
-    <label> Hue Key &ndash; <small>the base color hue to remove</small>
-      <input type="range" name="hue" min="0" max="360" value="120">
-    </label> <br>
+      <label> Delta 1 &ndash; <small>hue distance limity for total transparency</small></label>
+      <input type="range" name="delta1" min="0" max="360" value="30">    
 
-    <label> Delta 1 &ndash; <small>hue distance limity for total transparency</small>
-      <input type="range" name="delta1" min="0" max="360" value="30">
-    </label> <br>
-
-    <label> Delta 2 &ndash; <small>hue distance to start total opacity</small>
+      <label> Delta 2 &ndash; <small>hue distance to start total opacity</small></label>
       <input type="range" name="delta2" min="0" max="360" value="60">
-    </label> <br>
-
-    <label> Delta 3 &ndash; <small>hue distance limit for hue correction</small>
+      
+      <label> Delta 3 &ndash; <small>hue distance limit for hue correction</small></label>
       <input type="range" name="delta3" min="0" max="360" value="70">
-    </label> <br>
 
-    <label> Max Light &ndash; <small>max HS<b>L</b> value to remove a pixel</small>
+      <label> Max Light &ndash; <small>max HSL value to remove a pixel</small></label>
       <input type="range" name="maxlight" min="0" max="100" value="80">
-    </label> <br>
 
-    <label> Min Light &ndash; <small>min HS<b>L</b> value to remove a pixel</small>
+      <label> Min Light &ndash; <small>min HSL value to remove a pixel</small></label>
       <input type="range" name="minlight" min="0" max="100" value="20">
-    </label> <br>
 
-    <label> Min Saturation &ndash; <small>min H<b>S</b>L value to remove a pixel</small>
+      <label> Min Saturation &ndash; <small>min HSL value to remove a pixel</small></label>
       <input type="range" name="minSaturation" min="0" max="100" value="20">
-    </label> <br>
+    </aside>
   </div>
 
   <img id="bg-img" src="images/bg.jpg" style="display: none;">
-
-  <canvas id="chromaCanvas" width="400" height="300"></canvas>
 
   <img id="snapshot">
 

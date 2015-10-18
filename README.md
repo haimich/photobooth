@@ -18,3 +18,9 @@ one:
 
 ## Flickr API
 * https://www.flickr.com/services/api/misc.urls.html
+
+## Todos
+* make output image as big as possible
+* use pseudo user
+* use Powermate Knopf
+* nicer Success Message after file upload

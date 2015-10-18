@@ -36,7 +36,8 @@
     });
 
     imageResults.addEventListener('click', function(evt) {
-      console.log(evt.target);
+      var bgImg = document.querySelector('#bg-img');
+      bgImg.src = evt.target.src;
       vex.close();
     })
   }

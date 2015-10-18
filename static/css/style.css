@@ -83,3 +83,7 @@ aside {
   font-weight: bold;
   cursor: pointer;
 }
+
+#imageResults {
+  margin-top: 15px;
+}

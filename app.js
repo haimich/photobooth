@@ -12,9 +12,12 @@ app.get('/search', function (req, res) {
     res.end('Error: no term given');
   } else {
     try {
-      search(term, function(response) {
-        res.end(response);
-      });
+      var dataReceived = function (data) { res.send(data); };
+      var end          = function() { 
+        //res.end();
+      };
+
+      search(term, dataReceived, end);
     } catch (error) {
       res.end(error);
     }

@@ -13,6 +13,10 @@
         addContent($vexContent);
       }
     });
+
+    //Set dialog width
+    $('.vex.vex-theme-flat-attack .vex-content').css('width', '856px');
+
   });
 
   function addContent($vexContent) {

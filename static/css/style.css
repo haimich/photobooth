@@ -6,25 +6,11 @@ body {
   position: relative;
 }
 
-#videoElement {
-  width: 600px;
-  height: 400px;
-  background-color: #666;
-}
-
-#imgElement {
-  width: 600px;
-  height: 400px;
-}
-
 main {
   margin-bottom: 10px;
   border: 10px #333 solid;
-  width: 70%;
-  height: 100vh;
-}
-
-#chromeCanvas {
+  width: 600px;
+  height: 450px;
 }
 
 aside {
@@ -54,7 +40,6 @@ aside {
 }
 
 .vex.vex-theme-flat-attack .vex-content {
-  width: 856px;
   top: -38px;
 }
 

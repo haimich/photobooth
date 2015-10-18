@@ -5,6 +5,7 @@
 
     var video = document.querySelector('#videoElement');
     var bgImg = document.querySelector('#bg-img');
+    var shootBtn = document.querySelector('#shootBtn');
 
     var chromaCanvas = document.querySelector('#chromaCanvas');
     var mergeCanvas = document.createElement('canvas');
@@ -55,7 +56,6 @@
         return;
       }
 
-
       var offsetY = (bgImg.naturalWidth / 4 * 3 - bgImg.naturalHeight) / 2;
 
       //chromaCtx.clearRect(0, 0, chromaCanvas.width, chromaCanvas.height);
@@ -65,31 +65,23 @@
       fillChromaCanvas();
       setTimeout(function () {
         timerCallback();
-      }, 0);
+      }, 1000);
     }
-
-    function loadImage(sourceURL) {
-      return new Promise(function (resolve, reject) {
-        var imageElement = document.createElement('img');
-        imageElement.crossorigin = 'anonymous';
-        imageElement.src = sourceURL;
-        imageElement.onload = function () { resolve(imageElement); };
-        imageElement.onerror = reject;
-      });
-    }
-
-    loadImage('https://farm1.staticflickr.com/592/22266513761_3d92f74958_h.jpg').then(function (img) { bgImg = img; console.log(img); });
 
     function snapshot() {
-      snapshotElement.src = chromaCanvas.toDataURL();
+      vex.open({
+        message: null,
+        showCloseButton: true,
+        buttons: [],
+        content: '<img src="' + chromaCanvas.toDataURL() + '"><div class="vex-dialog-buttons"><input class="vex-dialog-button-primary vex-dialog-button vex-first vex-last" value="Post in ONE!" type="submit"></div>'
+      });
+
+      //Set dialog width
+      $('.vex.vex-theme-flat-attack .vex-content').css('width', '751px');
     }
 
-    chromaCanvas.addEventListener('click', snapshot);
-    video.addEventListener('play', function() {
-      // var width = video.videoWidth / 2;
-      // var height = video.videoHeight / 2;
-      timerCallback();
-    });
+    shootBtn.addEventListener('click', snapshot);
+    video.addEventListener('play', function() { timerCallback(); });
 
     function handleVideo(stream) {
       video.src = window.URL.createObjectURL(stream);
@@ -99,9 +91,9 @@
     function videoError(e) {
       console.log('An error occured: ', e);
     }
-     
-    // if (navigator.getUserMedia) {       
-    //   navigator.getUserMedia({video: true}, handleVideo, videoError);
-    // }
+    
+    if (navigator.getUserMedia) {       
+      navigator.getUserMedia({video: true}, handleVideo, videoError);
+    }
   };
 }());

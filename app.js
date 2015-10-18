@@ -1,13 +1,13 @@
 var search  = require('./search');
+var share   = require('./share');
 var config  = require('./config');
 var express = require('express');
 var bodyParser = require('body-parser');
 
 var app = express();
+
 app.use(express.static('static'));
-
-
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false, limit: '50mb' }));
 app.use(bodyParser.json());
 
 /* Flickr Search */
@@ -33,5 +33,11 @@ app.post('/upload', function(req, res) {
   imageAsBase64 = req.body.image;
   res.json({ success: true });
 });
- 
+
+app.get('/share', function(req, res) {
+  share('http://www.keenthemes.com/preview/metronic/theme/assets/global/plugins/jcrop/demos/demo_files/image1.jpg', function(data) {
+    //...
+  });
+});
+
 app.listen(3000);

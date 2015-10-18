@@ -20,8 +20,6 @@ module.exports = function(term, dataReceived, end) {
     });
   });
 
-  // req.end();
-
   req.on('error', function(e) {
     throw new Error('Search request failed');
   });

@@ -11,6 +11,20 @@ main {
   border: 10px #333 solid;
   width: 800px;
   height: 599px;
+  position: relative;
+}
+
+#live {
+  position: absolute;
+  z-index: 1;
+  color: #FFF;
+  font-weight: 600;
+  font-family: Arial;
+  font-size: 33pt;
+  right: 18px;
+  top: 10px;
+  text-shadow: 3px 1px #F00;
+  letter-spacing: 1px;
 }
 
 aside {

@@ -41,7 +41,7 @@
     imageResults.addEventListener('click', function(evt) {
       var bgImg = document.querySelector('#bg-img');
 
-      var largeImg = evt.target.src.replace('_q.jpg', '_b.jpg');
+      var largeImg = evt.target.src.replace('_q.jpg', '_b.jpg'); // see https://www.flickr.com/services/api/misc.urls.html
 
       bgImg.src = largeImg;
       vex.close();

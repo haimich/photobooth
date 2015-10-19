@@ -19,23 +19,15 @@
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
 
     function buildConfig() {
-      var sliderHue = document.querySelector('input[name=hue]'),
-          sliderDelta1 = document.querySelector('input[name=delta1]'),
-          sliderDelta2 = document.querySelector('input[name=delta2]'),
-          sliderDelta3 = document.querySelector('input[name=delta3]'),
-          sliderMaxLight = document.querySelector('input[name=maxlight]'),
-          sliderMinLight = document.querySelector('input[name=minlight]'),
-          sliderMinSaturation = document.querySelector('input[name=minSaturation]');
-
       return {
         input: mergeCanvas,
-        hueKey: sliderHue.value,
-        hueDelta1: sliderDelta1.value,
-        hueDelta2: sliderDelta2.value,
-        hueDelta3: sliderDelta3.value,
-        maxLight: sliderMaxLight.value / 100,
-        minLight: sliderMinLight.value / 100,
-        minSatur: sliderMinSaturation.value / 100
+        hueKey: document.querySelector('input[name=hue]').value,
+        hueDelta1: document.querySelector('input[name=delta1]').value,
+        hueDelta2: document.querySelector('input[name=delta2]').value,
+        hueDelta3: document.querySelector('input[name=delta3]').value,
+        maxLight: document.querySelector('input[name=maxlight]').value / 100,
+        minLight: document.querySelector('input[name=minlight]').value / 100,
+        minSatur: document.querySelector('input[name=minSaturation]').value / 100
       };
     }
 

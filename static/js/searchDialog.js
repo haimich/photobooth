@@ -40,7 +40,10 @@
 
     imageResults.addEventListener('click', function(evt) {
       var bgImg = document.querySelector('#bg-img');
-      bgImg.src = evt.target.src;
+
+      var largeImg = evt.target.src.replace('_q.jpg', '_b.jpg');
+
+      bgImg.src = largeImg;
       vex.close();
     })
   }
@@ -54,7 +57,7 @@
   }
 
   function createImage(photo) {
-    var photoUrl = 'https://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_b.jpg';
+    var photoUrl = 'https://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_q.jpg';
     var proxyUrl = '/proxy?target=' + encodeURI(photoUrl);
     var imageElement = document.createElement('img');
     imageElement.src = proxyUrl;

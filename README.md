@@ -18,5 +18,7 @@ one:
 
 ! Add a folder "photos" to the top level.
 
+! curl
+
 ## Flickr API
 * https://www.flickr.com/services/api/misc.urls.html

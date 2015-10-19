@@ -20,7 +20,7 @@
 
     function fillChromaCanvas() {
       if (localMediaStream) {
-        mergeCtx.drawImage(video, 0, 0, 640, 480, //video.clientWidth,    video.clientHeight,
+        mergeCtx.drawImage(video, 0, 0, 640, 480,
                    0, 0, chromaCanvas.width, chromaCanvas.height);
         
         var options = {
@@ -54,7 +54,7 @@
       fillChromaCanvas();
       setTimeout(function () {
         timerCallback();
-      }, 10);
+      }, 100);
     }
 
     video.addEventListener('play', function() { timerCallback(); });

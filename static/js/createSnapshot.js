@@ -30,7 +30,7 @@
     });
 
     //Set dialog width
-    $('.vex.vex-theme-flat-attack .vex-content').css('width', '751px');
+    $('.vex.vex-theme-flat-attack .vex-content').css('width', '913px');
 
     document.querySelector('#shareInONE').addEventListener('click', function() {
       uploadImage(snapshot);

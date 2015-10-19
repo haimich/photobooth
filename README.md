@@ -1,6 +1,6 @@
 # photobooth
-## Config file layout
-Add a file named photobooth-config.yml to the top level of the project. Format:
+## Prerequisites
+1. Add a config file named photobooth-config.yml to the top level of the project. Format:
 
 ```
 flickr:
@@ -15,6 +15,8 @@ one:
   user:
   pw: 
 ```
+
+2. Add a folder "photos" to the top level.
 
 ## Flickr API
 * https://www.flickr.com/services/api/misc.urls.html

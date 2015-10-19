@@ -18,25 +18,23 @@
 
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
 
-    function buildConfig() {
-      return {
-        input: mergeCanvas,
-        hueKey: document.querySelector('input[name=hue]').value,
-        hueDelta1: document.querySelector('input[name=delta1]').value,
-        hueDelta2: document.querySelector('input[name=delta2]').value,
-        hueDelta3: document.querySelector('input[name=delta3]').value,
-        maxLight: document.querySelector('input[name=maxlight]').value / 100,
-        minLight: document.querySelector('input[name=minlight]').value / 100,
-        minSatur: document.querySelector('input[name=minSaturation]').value / 100
-      };
-    }
-
     function fillChromaCanvas() {
       if (localMediaStream) {
         mergeCtx.drawImage(video, 0, 0, 640, 480, //video.clientWidth,    video.clientHeight,
                    0, 0, chromaCanvas.width, chromaCanvas.height);
         
-        var chromaKeyer = new window.ChromaKey2Alpha(buildConfig());
+        var options = {
+          input: mergeCanvas,
+          hueKey: document.querySelector('input[name=hue]').value,
+          hueDelta1: document.querySelector('input[name=delta1]').value,
+          hueDelta2: document.querySelector('input[name=delta2]').value,
+          hueDelta3: document.querySelector('input[name=delta3]').value,
+          maxLight: document.querySelector('input[name=maxlight]').value / 100,
+          minLight: document.querySelector('input[name=minlight]').value / 100,
+          minSatur: document.querySelector('input[name=minSaturation]').value / 100
+        };
+
+        var chromaKeyer = new window.ChromaKey2Alpha(options);
         chromaKeyer.removeChromaKey();
         chromaCtx.drawImage(mergeCanvas, 0, 0);
       }

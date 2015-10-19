@@ -5,7 +5,6 @@
 
     var video = document.querySelector('#videoElement');
     var bgImg = document.querySelector('#bg-img');
-    var shootBtn = document.querySelector('#shootBtn');
 
     var chromaCanvas = document.querySelector('#chromaCanvas');
     var mergeCanvas = document.createElement('canvas');
@@ -68,38 +67,6 @@
       }, 10);
     }
 
-    function uploadImage(imageAsBase64) {
-      var url = '/upload';
-
-      $.ajax({
-        type: 'POST',
-        url: url,
-        data: { image: imageAsBase64 },
-        success: function() { alert('Success!'); },
-        error: function(reason) { console.log('An error occured', reason); },
-        dataType: 'json'
-      });
-    }
-
-    function snapshot() {
-      var snapshot = chromaCanvas.toDataURL('image/jpeg', 1.0);
-
-      vex.open({
-        message: null,
-        showCloseButton: true,
-        buttons: [],
-        content: '<img src="' + snapshot + '"><div class="vex-dialog-buttons"><input id="shareInONE" class="vex-dialog-button-primary vex-dialog-button vex-first vex-last" value="Post in ONE!" type="submit"></div>'
-      });
-
-      //Set dialog width
-      $('.vex.vex-theme-flat-attack .vex-content').css('width', '751px');
-
-      document.querySelector('#shareInONE').addEventListener('click', function() {
-        uploadImage(snapshot);
-      });
-    }
-
-    shootBtn.addEventListener('click', snapshot);
     video.addEventListener('play', function() { timerCallback(); });
 
     function handleVideo(stream) {

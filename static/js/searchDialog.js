@@ -16,7 +16,6 @@
 
     //Set dialog width
     $('.vex.vex-theme-flat-attack .vex-content').css('width', '856px');
-
   });
 
   function addContent($vexContent) {
@@ -47,7 +46,7 @@
   }
 
   function fetchPhotos(term) {
-    var url = "/search?term=" + term;
+    var url = '/search?term=' + term;
 
     return fetch(url)
         .then(function (res) { return res.json(); })
@@ -55,7 +54,7 @@
   }
 
   function createImage(photo) {
-    var photoUrl = 'https://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_q.jpg';
+    var photoUrl = 'https://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_b.jpg';
     var proxyUrl = '/proxy?target=' + encodeURI(photoUrl);
     var imageElement = document.createElement('img');
     imageElement.src = proxyUrl;

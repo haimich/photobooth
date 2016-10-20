@@ -1,4 +1,7 @@
 # photobooth
+
+![screenshot](https://raw.githubusercontent.com/haimich/photobooth/master/concept/screenshot.png)
+
 ## Prerequisites
 Add a config file named photobooth-config.yml to the top level of the project. Format:
 

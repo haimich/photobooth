@@ -18,6 +18,12 @@ one:
 
 Add a folder "photos" to the top level.
 
+## How to start
+```bash
+sudo npm install -g static-server
+static-server static
+```
+
 ## Flickr API
 * https://www.flickr.com/services/api/misc.urls.html
  
